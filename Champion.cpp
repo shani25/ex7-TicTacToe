@@ -22,7 +22,7 @@ const Coordinate Champion::play(const Board& board){
 		}
 	
 		if (board[{0,1}] == 'X'){
-			for (int i = 0; i < board.size(); ++i) {
+			for (uint i = 0; i < board.size(); ++i) {
 				Coordinate c{i,board.size()-i-1};
 				if (board[c] == '.') {
 					return c;
@@ -32,7 +32,7 @@ const Coordinate Champion::play(const Board& board){
 		}			
 			
 		else if(board[{1,0}] == 'X' ){
-			for(int i=board.size()-1; i >= 0; i--){
+			for(uint i=board.size()-1; i >= 0; i--){
 				Coordinate c{i,board.size()-1-i};
 				if (board[c]=='.') {
 					return c;
