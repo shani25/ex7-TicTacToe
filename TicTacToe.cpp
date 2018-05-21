@@ -95,47 +95,12 @@ bool TicTacToe :: checkWin() const{
 
 
 Player& TicTacToe :: winner() const{
-    if(this->getWinner() == 'X'){
-        
-        if(typeid(*this->xPlayer) == typeid(XYPlayer)){
-            return (*((XYPlayer*) this->xPlayer));
-        }
-    
-        else if(typeid(*this->xPlayer) == typeid(YXPlayer)){
-            return (*((YXPlayer*)this->xPlayer));
-        }
-        else if(typeid(*this->xPlayer) == typeid(IllegalPlayer)){
-            return (*((IllegalPlayer*) this->xPlayer));
-        }
-        else if(typeid(*this->xPlayer) == typeid(Champion)){
-            return (*((Champion*) this->xPlayer));
-        }
-        
-        /*else if(typeid(*this->xPlayer) == typeid(ExceptionPlayer)){
-            return (*((ExceptionPlayer*) this->xPlayer));
-        }
-        */
-        
-    }
-    else{    
-        if(typeid(*this->oPlayer) == typeid(XYPlayer)){
-            return (*((XYPlayer*) this->oPlayer));
-        }
-        else if(typeid(*this->oPlayer) == typeid(YXPlayer)){
-            return (*((YXPlayer*) this->oPlayer));
-        }
-        else if(typeid(*this->oPlayer) == typeid(IllegalPlayer)){
-            return (*((IllegalPlayer*) this->oPlayer));
-        }
-        else if(typeid(*this->oPlayer) == typeid(Champion)){
-            return (*((Champion*) this->oPlayer));
-        }
-     /*   else if(typeid(*this->oPlayer) == typeid(ExceptionPlayer)){
-            return (*((ExceptionPlayer*) this->oPlayer));
-        }*/
-            
-    }
+    if(this->getWinner() == 'X')
+        return (*this->xPlayer);
+    else
+        return (*this->oPlayer);
 }
+
 const Board& TicTacToe :: board() const{
     return this->b;
 }
