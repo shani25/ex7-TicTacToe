@@ -18,7 +18,6 @@ void TicTacToe :: play(Player& xPlayer, Player& oPlayer){
     this->oPlayer = &oPlayer;
     
 
-
     int countX = 0, countO = 0;
     Coordinate coordinate;
     Coordinate c{0,0};
@@ -45,11 +44,11 @@ void TicTacToe :: play(Player& xPlayer, Player& oPlayer){
                     setWinner('X');
                     break;
                 }
-              /*  else if((countX+countO) == (getBoardSize()*getBoardSize())){
+                else if((countX+countO) == (getBoardSize()*getBoardSize())){
                     setWinner('O');
                     break;
                 }
-                */
+               
             }
             
             setTurn('O');
@@ -79,7 +78,11 @@ void TicTacToe :: play(Player& xPlayer, Player& oPlayer){
             }
             setTurn('X');
         }
-    }while(b[coordinate] != '.');
+    }while((countO+countX) != (b.size()*b.size()));
+    
+    if((countO+countX) == (b.size()*b.size())){
+        setWinner('O');
+    }
 }
 
 bool TicTacToe :: checkWin() const{ 
