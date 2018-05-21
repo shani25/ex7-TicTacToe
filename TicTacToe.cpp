@@ -30,8 +30,6 @@ void TicTacToe :: play(Player& xPlayer, Player& oPlayer){
                 setWinner('O');
                 break;
             }
-        
-
             coordinate = xPlayer.play(this->b);
             
             //illigal player
@@ -39,8 +37,6 @@ void TicTacToe :: play(Player& xPlayer, Player& oPlayer){
                     setWinner('O');
                     break;
             }
-
-            
             this->b[coordinate] = 'X';
             countX++;
             //check win
@@ -49,10 +45,15 @@ void TicTacToe :: play(Player& xPlayer, Player& oPlayer){
                     setWinner('X');
                     break;
                 }
+                else if((countX+countO) == (getBoardSize()*getBoardSize())){
+                    setWinner('O');
+                    break;
+                }
             }
             
             setTurn('O');
         }
+        
         //O turn
         else{
             if(typeid(*this->oPlayer) == typeid(ExceptionPlayer)){
@@ -65,6 +66,7 @@ void TicTacToe :: play(Player& xPlayer, Player& oPlayer){
                     setWinner('X');
                     break;
             }
+            
             b[coordinate] = 'O';
             countO++;
             
