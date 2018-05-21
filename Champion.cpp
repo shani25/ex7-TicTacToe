@@ -4,7 +4,7 @@ const Coordinate Champion::play(const Board& board){
 
 	if(this->myChar == 'X'){//we start
 		for (uint x=0; x<board.size(); ++x) {
-			Coordinate c{static_cast<int>x,static_cast<int>x};
+			Coordinate c{static_cast(int)x,static_cast(int)x};
 			if (board[c]=='.') {
 				return c;
 			}
