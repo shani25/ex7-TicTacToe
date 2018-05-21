@@ -45,10 +45,11 @@ void TicTacToe :: play(Player& xPlayer, Player& oPlayer){
                     setWinner('X');
                     break;
                 }
-                else if((countX+countO) == (getBoardSize()*getBoardSize())){
+              /*  else if((countX+countO) == (getBoardSize()*getBoardSize())){
                     setWinner('O');
                     break;
                 }
+                */
             }
             
             setTurn('O');
