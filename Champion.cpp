@@ -4,7 +4,7 @@ const Coordinate Champion::play(const Board& board){
 
 	if(this->myChar == 'X'){//we start
 		for (uint x=0; x<board.size(); ++x) {
-			Coordinate c{(int)x,(int)x};
+			Coordinate c{(uint)x,(uint)x};
 			if (board[c]=='.') {
 				return c;
 			}
@@ -23,7 +23,7 @@ const Coordinate Champion::play(const Board& board){
 	
 		if (board[{0,1}] == 'X'){
 			for (uint i = 0; i < board.size(); ++i) {
-				Coordinate c{(int)i,(int)board.size()-i-1};
+				Coordinate c{(uint)i,(uint)board.size()-i-1};
 				if (board[c] == '.') {
 					return c;
 				}
@@ -33,7 +33,7 @@ const Coordinate Champion::play(const Board& board){
 			
 		else if(board[{1,0}] == 'X' ){
 			for(uint i=board.size()-1; i >= 0; i--){
-				Coordinate c{(int)i,(int)board.size()-1-i};
+				Coordinate c{(uint)i,(uint)board.size()-1-i};
 				if (board[c]=='.') {
 					return c;
 				}					
